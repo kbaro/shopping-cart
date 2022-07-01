@@ -78,18 +78,18 @@ h3
     font-size: 20px;
 }
 
-.single-item .action {
+.single-item .actions {
     width: 30%;
 }
 
-.single-item .action input {
+.single-item .actions input {
     height: 40px;
     width: 60px;
     text-align: center;
     font-size: 18px;
 }
 
-.single-item .action button {
+.single-item .actions button {
     width: 60px;
     margin-top: 10px;
     height: 30px;
@@ -110,6 +110,7 @@ h3
 .cart-single-item button {
     padding: 5px;
 }
+
 
 .total {
     position: absolute;
