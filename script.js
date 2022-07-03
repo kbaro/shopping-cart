@@ -16,9 +16,11 @@ function addToCart(element) {
         
         cartItems.innerHTML += `<div class="cart-single-item">
                                     <h3>${name}</h3>
-                                    <p>$${price} x ${quantity}
+                                    <p>$${price} x ${quantity} = $<span>${total}</span></p>
                                     <button onclick="removeFromCart(this)" class="remove-item">Ukloni</button>
-                                </div>`;
+                                </div>
+                                `;
+
 
         document.querySelector('.total').innerText = `Total: $${allTotal}`;
 
@@ -31,5 +33,15 @@ function addToCart(element) {
 }  
 
 function removeFromCart(element) {
+    let mainEl = element.closest('.cart-single-item');
+    let price = mainEl.querySelector('p span').innerText;
+    price = parseInt(price);
+
+    allTotal -= price;
+
+    document.querySelector('.total').innerText = `Total: $${total}`;
+
+    mainEl.remove();
+
     
 }
