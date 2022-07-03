@@ -1,3 +1,5 @@
+let allTotal = 0;
+
 function addToCart(element) {
     let mainEl = element.closest('.single-item');
     let price = mainEl.querySelector('.price').innerText;
@@ -9,10 +11,20 @@ function addToCart(element) {
         price = price.substring(1);
         price = parseInt(price);
         let total = price * parseInt(quantity);
+
+        allTotal += total;
         
+        cartItems.innerHTML += `<div class="cart-single-item">
+                                    <h3>${name}</h3>
+                                    <p>$${price} x ${quantity}
+                                    <button onclick="removeFromCart(this)" class="remove-item">Ukloni</button>
+                                </div>`;
+
+        document.querySelector('.total').innerText = `Total: $${allTotal}`;
 
         element.innerText = 'Dodano';
         element.setAttribute('disabled', 'true');
+
     } else {
         alert('Odaberi količinu');
     }
