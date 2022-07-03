@@ -5,11 +5,15 @@ function addToCart(element) {
     let quantity = mainEl.querySelector('input').value;
     let cartItems = document.querySelector('.cart-items');
 
-    if(quantity > 0) {
-       
+    if(parseInt(quantity) > 0) {
+        price = price.substring(1);
+        price = parseInt(price);
+        let total = price * parseInt(quantity);
+        
+
+        element.innerText = 'Dodano';
+        element.setAttribute('disabled', 'true');
+    } else {
+        alert('Odaberi količinu');
     }
-
-    cartItems.innerHTML += 'Added ' + name;
-
-    console.log(name);
-}
+}  
