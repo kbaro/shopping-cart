@@ -29,3 +29,7 @@ function addToCart(element) {
         alert('Odaberi količinu');
     }
 }  
+
+function removeFromCart(element) {
+    
+}
